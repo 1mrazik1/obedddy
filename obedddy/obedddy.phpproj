@@ -23,6 +23,7 @@
     <Compile Include="header.php" />
     <Compile Include="history.php" />
     <Compile Include="index.php" />
+    <Compile Include="kontakt.php" />
     <Compile Include="utils.php" />
   </ItemGroup>
 </Project>

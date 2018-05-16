@@ -1,9 +1,8 @@
-    <?php
+<?php
     define("CURRENT_PAGE", 'index');
     $title = 'Školská jedáleň';
     include 'header.php';
-    ?>
-
+?>
     <section class="container">
         <h1>Aktuálna ponuka</h1>        <?php
         if (isset($_POST['order_foodId'])) {

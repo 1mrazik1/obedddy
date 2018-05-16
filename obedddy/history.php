@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 define("CURRENT_PAGE", 'history');
 $title = 'História transakcií | Školská jedáleň';
 include 'header.php';
@@ -16,9 +16,9 @@ include 'header.php';
             </tr>
         </thead>
         <tbody>
-            <?php
+<?php
             foreach (selectTransactions($_SESSION['userId'], $_GET['page']) as $key => $order) {
-            ?>
+?>
             <tr>
                 <td>
                     <?=$order['orderDate']?>

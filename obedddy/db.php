@@ -42,7 +42,7 @@ function selectTransactions($userId, $page = 0) {
 	$results = query("SELECT transactions.id, transactions.sum, transactions.date as orderDate, transactions.status, foods.description, foods.date FROM transactions
 		LEFT OUTER JOIN foods ON foods.id = transactions.foodId
 		WHERE userId=" . ((int) $userId) . "
-		ORDER BY orderDate ASC
+		ORDER BY orderDate DESC
 		LIMIT 10 OFFSET " . ((int) $page) * 10);
 	return $results->fetch_all(MYSQLI_ASSOC);
 }
@@ -63,5 +63,5 @@ function orderFood($userId, $foodId) {
 }
 
 function cancelOrder($userId, $orderId) {
-	return query("UPDATE transactions SET status=" . STATUS_CANCELED . " WHERE userId=" . ((int) $userId) . " AND id=" . ((int) $orderId) . " AND status=" . STATUS_OPEN . " AND date >= CURDATE()");
+	return query("UPDATE transactions SET status=" . STATUS_CANCELED . " WHERE userId=" . ((int) $userId) . " AND id=" . ((int) $orderId) . " AND status=" . STATUS_OPEN);
 }

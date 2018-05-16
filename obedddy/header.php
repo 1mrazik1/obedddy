@@ -6,7 +6,6 @@ require_once "utils.php";
 ?>
 <!doctype html>
 <html class="no-js" lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,8 +18,7 @@ require_once "utils.php";
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  
 </head>
 
 <body>
@@ -36,16 +34,17 @@ require_once "utils.php";
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item<?=menu_active_class('index')?>">
-            <a class="nav-link" href=".">Jedálny lístok<?=menu_active_sr('index')?></a>
-          </li>
-          <?php if(isLoggedIn()): ?>
-          <li class="nav-item<?=menu_active_class('history')?>">
-            <a class="nav-link" href="history.php">História transakcií<?=menu_active_sr('history')?></a>
-          </li>
-      <?php endif; ?>
-        </ul>
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item<?=menu_active_class('index')?>">
+                  <a class="nav-link" href=".">Jedálny lístok<?=menu_active_sr('index')?></a>
+              </li><?php if(isLoggedIn()): ?>
+              <li class="nav-item<?=menu_active_class('history')?>">
+                  <a class="nav-link" href="history.php">História transakcií<?=menu_active_sr('history')?></a>
+              </li><?php endif; ?>
+              <li class="nav-item<?=menu_active_class('contact')?>">
+                  <a class="nav-link" href="kontakt.php">Kontakt<?=menu_active_sr('history')?></a>
+              </li>
+          </ul>
         <?php if(!isLoggedIn()): ?>
         <form class="form-inline mr-3" method="POST">
 	    	<input name="username" class="form-control mr-sm-2" type="text" placeholder="pouzivatelskemeno" aria-label="Používateľské meno" value="<?=$_POST['username']?>">
